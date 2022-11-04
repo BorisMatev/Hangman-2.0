@@ -1,0 +1,38 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: rgb(164, 16, 129);
+}
+ul{
+    display: flex;
+}
+li{
+    list-style-type: none;
+    font-size: 30px;
+    margin: 10px;
+    border: solid 0.5px wheat;
+    padding: 15px 20px;
+    border-radius: 15px;
+}
+li:hover{
+    background-color:mediumvioletred;
+}
+input[type=text]{
+    border: none;
+    background-color: rgb(164, 16, 129);
+    border-bottom: 2px solid rgb(89, 0, 148);
+    outline: none;
+    font-size: 40px;
+    margin-top: 60px;
+}
+input[type=text]:focus {
+    box-shadow: 5px 5px 10px 1px rgb(109, 2, 109);
+    border-bottom: 2px solid rgb(109, 2, 109);
+}
+h1{
+    border-bottom: 2px solid rgb(89, 0, 148);
+    margin: 0px 10px;
+    font-size: 40px;
+}

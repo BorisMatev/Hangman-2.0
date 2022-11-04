@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div style="display: flex; justify-content:center" id="createPanel">
+        <input type="text" id="wordInput">
+        <button style="font-size:40px; 
+                display:flex;
+                flex-direction:column;
+                justify-content:end;
+                background-color:rgb(164, 16, 129);
+                border:none;
+                margin-left: 20px" onclick="createWord()">Submit</button>
+    </div>
+    <div style="display: flex; justify-content: center; visibility: hidden;" id="hiddenLetters">
+        <h1>2</h1>
+        <h1>3</h1>
+        <h1>4</h1>
+        <h1>5</h1>
+        <h1>6</h1>
+        <h1>f</h1>
+        <h1>d</h1>
+        <h1>d</h1>
+        <h1>d</h1>
+        <h1>d</h1>
+        <h1>r</h1>
+        <h1>f</h1>
+        <h1>d</h1>
+        <h1>h</h1>
+        <h1>w</h1>
+        <h1>j</h1>
+        <h1></h1>
+        <h1></h1>
+        <h1></h1>
+        <h1></h1>
+    </div>
+    <div style="display: flex; 
+    justify-content:center; 
+    margin-top: 150px;">
+        <div id="letters" style="visibility: hidden;">
+            <ul>
+                <li id="q" onclick="(f('q'))">Q</li>
+                <li id="w" onclick="(f('w'))">W</li>
+                <li id="e" onclick="(f('e'))">E</li>
+                <li id="r" onclick="(f('r'))">R</li>
+                <li id="t" onclick="(f('t'))">T</li>
+                <li id="y" onclick="(f('y'))">Y</li>
+                <li id="u" onclick="(f('u'))">U</li>
+                <li id="i" onclick="(f('i'))">I</li>
+                <li id="o" onclick="(f('o'))">O</li>
+                <li id="p" onclick="(f('p'))">P</li>
+            </ul>
+            <ul style="margin-left: 20px;">
+                <li id="a" onclick="(f('a'))">A</li>
+                <li id="s" onclick="(f('s'))">S</li>
+                <li id="d" onclick="(f('d'))">D</li>
+                <li id="f" onclick="(f('f'))">F</li>
+                <li id="g" onclick="(f('g'))">G</li>
+                <li id="h" onclick="(f('h'))">H</li>
+                <li id="j" onclick="(f('j'))">J</li>
+                <li id="k" onclick="(f('k'))">K</li>
+                <li id="l" onclick="(f('l'))">L</li>
+            </ul>
+            <ul style="margin-left: 50px;">
+                <li id="z" onclick="(f('z'))">Z</li>
+                <li id="x" onclick="(f('x'))">X</li>
+                <li id="c" onclick="(f('c'))">C</li>
+                <li id="v" onclick="(f('v'))">V</li>
+                <li id="b" onclick="(f('b'))">B</li>
+                <li id="n" onclick="(f('n'))">N</li>
+                <li id="m" onclick="(f('m'))">M</li>
+            </ul>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
