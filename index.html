@@ -21,47 +21,70 @@
                 border:none;
                 margin-left: 20px" onclick="createWord()">Submit</button>
     </div>
+    <div id="container" style="display: flex; justify-content:center; margin-top: 50px"></div>
     <div style="display: flex; justify-content: center; visibility: hidden;" id="hiddenLetters">
-        <script src="main.js"></script>
-    </div>
-    <div style="display: flex; 
-    justify-content:center; 
-    margin-top: 150px;">
-        <div id="letters" style="visibility: hidden;">
-            <ul>
-                <li id="q" onclick="(f('q'))">Q</li>
-                <li id="w" onclick="(f('w'))">W</li>
-                <li id="e" onclick="(f('e'))">E</li>
-                <li id="r" onclick="(f('r'))">R</li>
-                <li id="t" onclick="(f('t'))">T</li>
-                <li id="y" onclick="(f('y'))">Y</li>
-                <li id="u" onclick="(f('u'))">U</li>
-                <li id="i" onclick="(f('i'))">I</li>
-                <li id="o" onclick="(f('o'))">O</li>
-                <li id="p" onclick="(f('p'))">P</li>
-            </ul>
-            <ul style="margin-left: 20px;">
-                <li id="a" onclick="(f('a'))">A</li>
-                <li id="s" onclick="(f('s'))">S</li>
-                <li id="d" onclick="(f('d'))">D</li>
-                <li id="f" onclick="(f('f'))">F</li>
-                <li id="g" onclick="(f('g'))">G</li>
-                <li id="h" onclick="(f('h'))">H</li>
-                <li id="j" onclick="(f('j'))">J</li>
-                <li id="k" onclick="(f('k'))">K</li>
-                <li id="l" onclick="(f('l'))">L</li>
-            </ul>
-            <ul style="margin-left: 50px;">
-                <li id="z" onclick="(f('z'))">Z</li>
-                <li id="x" onclick="(f('x'))">X</li>
-                <li id="c" onclick="(f('c'))">C</li>
-                <li id="v" onclick="(f('v'))">V</li>
-                <li id="b" onclick="(f('b'))">B</li>
-                <li id="n" onclick="(f('n'))">N</li>
-                <li id="m" onclick="(f('m'))">M</li>
-            </ul>
+        <div style="display: flex; justify-content:center; margin-top: 150px;">
+            <div id="keyboard" style="visibility: hidden;">
+                <ul>
+                    <li id="q1" onclick="(guessLetter('q'))">Q</li>
+                    <li id="w1" onclick="(guessLetter('w'))">W</li>
+                    <li id="e1" onclick="(guessLetter('e'))">E</li>
+                    <li id="r1" onclick="(guessLetter('r'))">R</li>
+                    <li id="t1" onclick="(guessLetter('t'))">T</li>
+                    <li id="y1" onclick="(guessLetter('y'))">Y</li>
+                    <li id="u1" onclick="(guessLetter('u'))">U</li>
+                    <li id="i1" onclick="(guessLetter('i'))">I</li>
+                    <li id="o1" onclick="(guessLetter('o'))">O</li>
+                    <li id="p1" onclick="(guessLetter('p'))">P</li>
+                </ul>
+                <ul style="margin-left: 20px;">
+                    <li id="a1" onclick="(guessLetter('a'))">A</li>
+                    <li id="s1" onclick="(guessLetter('s'))">S</li>
+                    <li id="d1" onclick="(guessLetter('d'))">D</li>
+                    <li id="f1" onclick="(guessLetter('f'))">F</li>
+                    <li id="g1" onclick="(guessLetter('g'))">G</li>
+                    <li id="h1" onclick="(guessLetter('h'))">H</li>
+                    <li id="j1" onclick="(guessLetter('j'))">J</li>
+                    <li id="k1" onclick="(guessLetter('k'))">K</li>
+                    <li id="l1" onclick="(guessLetter('l'))">L</li>
+                </ul>
+                <ul style="margin-left: 50px;">
+                    <li id="z1" onclick="(guessLetter('z'))">Z</li>
+                    <li id="x1" onclick="(guessLetter('x'))">X</li>
+                    <li id="c1" onclick="(guessLetter('c'))">C</li>
+                    <li id="v1" onclick="(guessLetter('v'))">V</li>
+                    <li id="b1" onclick="(guessLetter('b'))">B</li>
+                    <li id="n1" onclick="(guessLetter('n'))">N</li>
+                    <li id="m1" onclick="(guessLetter('m'))">M</li>
+                </ul>
+            </div>
         </div>
     </div>
+    <div id="loseAlert" style="position: absolute; background-color: rgb(236, 64, 255); border-radius: 10px; padding: 10px; top: 200px; left: 38%; visibility: hidden;">
+        <div style="background-color: rgb(97, 8, 76); padding: 90px; color: rgb(178, 158, 119); display: flex; flex-direction: column;">
+            <h1 style="border: none;">
+                You lose!!
+            </h1>
+            <br>
+            <h1 style="border: none;">HAHAHA</h1><br>
+            <button id="btn" style="background-color: rgb(97, 8, 76); border: none; color: rgb(178, 158, 119); font-size: 40px;">Start again</button>
+        </div>
+    </div>
+    <div id="winAlert" style="position: absolute; background-color: rgb(236, 64, 255); border-radius: 10px; padding: 10px; top: 200px; left: 38%; visibility: hidden;">
+        <div style="background-color: rgb(97, 8, 76); padding: 90px; color: rgb(178, 158, 119); display: flex; flex-direction: column;">
+            <h1 style="border: none;">
+                You Win!!
+            </h1>
+            <br>
+            <div style="display: flex; justify-content:center">
+                <h1 id="answer" style="border: none;"></h1>
+            </div>
+            
+            <br>
+            <button id="btn" style="background-color: rgb(97, 8, 76); border: none; color: rgb(178, 158, 119); font-size: 40px;">Start again</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
 </body>
 
 </html>

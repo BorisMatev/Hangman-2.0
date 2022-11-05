@@ -15,9 +15,11 @@ li{
     border: solid 0.5px wheat;
     padding: 15px 20px;
     border-radius: 15px;
+    cursor: pointer;
 }
 li:hover{
     background-color:mediumvioletred;
+
 }
 input[type=text]{
     border: none;
@@ -30,6 +32,7 @@ input[type=text]{
 input[type=text]:focus {
     box-shadow: 5px 5px 10px 1px rgb(109, 2, 109);
     border-bottom: 2px solid rgb(109, 2, 109);
+    border-radius: 20px;
 }
 h1{
     border-bottom: 2px solid rgb(89, 0, 148);
