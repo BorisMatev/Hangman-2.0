@@ -1,10 +1,13 @@
 var word;
 var originalWord;
 var arrayObj = [];
-var a;
+var mainObject;
+var fullSpaces = 0;
+var vremennaPromenliva = 0;
 var wrapper;
 var wordLenght;
 var divContainer = document.getElementById('container');
+var randomWordList = ["Acid", "Action", "Actress", "Advanced", "Afternoon", "Background", "Basketball", "battle", "beyond", "biological", "breath", "bullet","carefully", "celebration", "championship", "charge", "childhood", "chocolate", "citizen", "collapse", "come", "comfortable", "concert", "cow", "darkness", "dangerous", "deep", "democracy", "deny", "develop", "dirt", "discipline", "dust"];
 function createWord() {
     arrayObj = [];
     word = document.getElementById('wordInput').value;
@@ -43,35 +46,10 @@ function createWord() {
     }
     else {
         word = document.getElementById('wordInput').value.toLowerCase();
-        console.log(word);
-
         originalWord = document.getElementById('wordInput').value;
-        wordLenght = word.length;
-        document.getElementById('keyboard').style.visibility = "visible";
-        document.getElementById('hiddenLetters').style.visibility = "visible";
-        document.getElementById('createPanel').style.visibility = "hidden";
-        wrapper = document.createElement("div");
-        wrapper.setAttribute("style", "")
-        for (let i = 0; i < wordLenght; i++) {
-            a = document.createElement("button");
-            a.id = word[i];
-            a.innerHTML = "";
-            a.style.backgroundColor = "rgb(164, 16, 129)";
-            a.style.border = "none";
-            a.style.borderBottom = "2px solid rgb(89, 0, 148)";
-            a.style.margin = "0px 10px";
-            a.style.fontSize = "40px";
-            a.style.width = "50px";
-            arrayObj.push(a);
-            wrapper.appendChild(a);
-        }
-        divContainer.appendChild(wrapper);
-        alfabetV();
-        document.getElementById('container').style.visibility = "visible";
+        generateWord();
     }
 }
-var fullSpaces = 0;
-var vremennaPromenliva = 0;
 function guessLetter(leter) {
     document.getElementById(leter + 1).style.visibility = "hidden";
     if (!word.includes(leter)) {
@@ -88,6 +66,7 @@ function guessLetter(leter) {
             }
         });
         if (vremennaPromenliva == wordLenght) {
+            fullSpaces = 0;
             document.getElementById('answer').innerHTML = originalWord;
             document.getElementById("winAlert").style.visibility = "visible";
             document.getElementById('keyboard').style.visibility = "hidden";
@@ -112,13 +91,20 @@ function newGame() {
     document.getElementById('keyboard').style.visibility = "hidden";
     document.getElementById('hiddenLetters').style.visibility = "hidden";
     document.getElementById('createPanel').style.visibility = "visible";
+    document.getElementById('randomBtn').style.visibility = "visible";
     document.getElementById('wordInput').value = "";
     alfabetH();
     arrayObj.forEach(x => {
         x.remove();
     });
 }
-
+document.getElementById("randomBtn").addEventListener("click", randomWord);
+function randomWord(){
+    let indexOfWord = getRandomInt();
+    word = randomWordList[indexOfWord].toLowerCase();
+    originalWord = randomWordList[indexOfWord];
+    generateWord();
+}
 function alfabetV(){
     document.getElementById('a1').style.visibility = "visible";
     document.getElementById('q1').style.visibility = "visible";
@@ -176,4 +162,34 @@ function alfabetH(){
     document.getElementById('b1').style.visibility = "hidden";
     document.getElementById('n1').style.visibility = "hidden";
     document.getElementById('m1').style.visibility = "hidden";
+}
+function getRandomInt() {
+    return Math.floor(Math.random() * (randomWordList.length - 1));
+}
+function generateWord() {
+    vremennaPromenliva = 0;
+    arrayObj = [];
+    wordLenght = word.length;
+    document.getElementById('keyboard').style.visibility = "visible";
+    document.getElementById('hiddenLetters').style.visibility = "visible";
+    document.getElementById('createPanel').style.visibility = "hidden";
+    wrapper = document.createElement("div");
+    wrapper.setAttribute("style", "")
+    for (let i = 0; i < wordLenght; i++) {
+        a = document.createElement("button");
+        a.id = word[i];
+        a.innerHTML = "";
+        a.style.backgroundColor = "rgb(164, 16, 129)";
+        a.style.border = "none";
+        a.style.borderBottom = "2px solid rgb(89, 0, 148)";
+        a.style.margin = "0px 10px";
+        a.style.fontSize = "40px";
+        a.style.width = "50px";
+        arrayObj.push(a);
+        wrapper.appendChild(a);
+    }
+    divContainer.appendChild(wrapper);
+    alfabetV();
+    document.getElementById('container').style.visibility = "visible";
+    document.getElementById('randomBtn').style.visibility = "hidden";
 }

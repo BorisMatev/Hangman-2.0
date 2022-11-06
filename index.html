@@ -13,14 +13,9 @@
 <body>
     <div style="display: flex; justify-content:center" id="createPanel">
         <input type="text" id="wordInput">
-        <button style="font-size:40px; 
-                display:flex;
-                flex-direction:column;
-                justify-content:end;
-                background-color:rgb(164, 16, 129);
-                border:none;
-                margin-left: 20px" onclick="createWord()">Submit</button>
+        <button class="btn1" onclick="createWord()">Submit</button>
     </div>
+    <button style="margin-left: 30%; background-color:rgb(164, 16, 129); border:none; margin-top: 20px; font-size: 20px;" id="randomBtn"">Random word</button>
     <div id="container" style="display: flex; justify-content:center; margin-top: 50px"></div>
     <div style="display: flex; justify-content: center; visibility: hidden;" id="hiddenLetters">
         <div style="display: flex; justify-content:center; margin-top: 150px;">
