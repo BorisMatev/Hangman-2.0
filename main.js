@@ -6,6 +6,7 @@ var wrapper;
 var wordLenght;
 var divContainer = document.getElementById('container');
 function createWord() {
+    arrayObj = [];
     word = document.getElementById('wordInput').value;
     if (word == "" ||
         word.includes(" ") ||
@@ -43,6 +44,7 @@ function createWord() {
     else {
         word = document.getElementById('wordInput').value.toLowerCase();
         console.log(word);
+
         originalWord = document.getElementById('wordInput').value;
         wordLenght = word.length;
         document.getElementById('keyboard').style.visibility = "visible";
@@ -65,6 +67,7 @@ function createWord() {
         }
         divContainer.appendChild(wrapper);
         alfabetV();
+        document.getElementById('container').style.visibility = "visible";
     }
 }
 var fullSpaces = 0;
@@ -94,6 +97,7 @@ function guessLetter(leter) {
         }
     }
     if (fullSpaces == 7) {
+        fullSpaces = 0;
         document.getElementById("loseAlert").style.visibility = "visible";
         document.getElementById('keyboard').style.visibility = "hidden";
         document.getElementById('hiddenLetters').style.visibility = "hidden";
@@ -110,6 +114,9 @@ function newGame() {
     document.getElementById('createPanel').style.visibility = "visible";
     document.getElementById('wordInput').value = "";
     alfabetH();
+    arrayObj.forEach(x => {
+        x.remove();
+    });
 }
 
 function alfabetV(){

@@ -23,6 +23,7 @@ li:hover{
 }
 input[type=text]{
     border: none;
+    padding-left: 25px;
     background-color: rgb(164, 16, 129);
     border-bottom: 2px solid rgb(89, 0, 148);
     outline: none;
