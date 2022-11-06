@@ -48,12 +48,14 @@ function createWord() {
         word = document.getElementById('wordInput').value.toLowerCase();
         originalWord = document.getElementById('wordInput').value;
         generateWord();
+        document.getElementById('createPanel').style.position = "absolute";
     }
 }
 function guessLetter(leter) {
     document.getElementById(leter + 1).style.visibility = "hidden";
     if (!word.includes(leter)) {
         fullSpaces++;
+        document.getElementById('img1').setAttribute("src", "img/"+ fullSpaces +".png");
     }
     else {
         vremennaPromenliva = 0;
@@ -93,6 +95,8 @@ function newGame() {
     document.getElementById('createPanel').style.visibility = "visible";
     document.getElementById('randomBtn').style.visibility = "visible";
     document.getElementById('wordInput').value = "";
+    document.getElementById('img1').setAttribute("src", "");
+    document.getElementById('createPanel').setAttribute("styte", "display: flex; justify-content:center");
     alfabetH();
     arrayObj.forEach(x => {
         x.remove();

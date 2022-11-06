@@ -11,14 +11,19 @@
 </head>
 
 <body>
+    <button class="resetBtn" id="btn">Reset game</button>
     <div style="display: flex; justify-content:center" id="createPanel">
         <input type="text" id="wordInput">
         <button class="btn1" onclick="createWord()">Submit</button>
     </div>
     <button style="margin-left: 30%; background-color:rgb(164, 16, 129); border:none; margin-top: 20px; font-size: 20px;" id="randomBtn"">Random word</button>
-    <div id="container" style="display: flex; justify-content:center; margin-top: 50px"></div>
+    
+    <div style="display: flex; justify-content:center; margin-top: 50px">
+    <img src=""" id="img1">
+        <div id="container" style="display: flex; flex-direction: column; justify-content:center; margin-top: 50px"></div>
+    </div>
     <div style="display: flex; justify-content: center; visibility: hidden;" id="hiddenLetters">
-        <div style="display: flex; justify-content:center; margin-top: 150px;">
+        <div style="display: flex; justify-content:center; margin-top: 10px;">
             <div id="keyboard" style="visibility: hidden;">
                 <ul>
                     <li id="q1" onclick="(guessLetter('q'))">Q</li>
@@ -62,7 +67,7 @@
             </h1>
             <br>
             <h1 style="border: none;">HAHAHA</h1><br>
-            <button id="btn" style="background-color: rgb(97, 8, 76); border: none; color: rgb(178, 158, 119); font-size: 40px;">Start again</button>
+            <button id="btn"  onclick="newGame()" style="background-color: rgb(97, 8, 76); border: none; color: rgb(178, 158, 119); font-size: 40px;">Start again</button>
         </div>
     </div>
     <div id="winAlert" style="position: absolute; background-color: rgb(236, 64, 255); border-radius: 10px; padding: 10px; top: 200px; left: 38%; visibility: hidden;">

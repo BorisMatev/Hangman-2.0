@@ -49,3 +49,18 @@ h1{
     border:none;
     margin-left: 20px;
 }
+.resetBtn{
+    bottom: 30px;
+    left: 30px;
+    background-color: rgb(97, 8, 76);
+    color: rgb(148, 120, 63);
+    border: solid 2px rgb(134, 92, 139);
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+    position: absolute;
+}
+.resetBtn:hover{
+    background-color:rgb(52, 4, 41);
+    box-shadow: 3px 3px 100px 5px;
+}
